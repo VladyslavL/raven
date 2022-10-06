@@ -15,6 +15,13 @@
     })
   }
 
+  if (document.querySelector('#edition-number')) {
+    const element = document.querySelector('#edition-number');
+    const url = window.location.search
+    element.innerHTML = url.replace('?edition=', '') || '01';
+  }
+
+
   MicroModal.init({
     disableScroll: true,
     awaitOpenAnimation: true,
