@@ -1,0 +1,322 @@
+:root {
+	--container-padding: clamp(1rem, 2vw, 2rem);
+	--color-accent: #c83d43;
+	--color-success: #50c83d;
+
+	--transition-options: 0.1s ease-in;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: "NeuePowerTrial";
+	font-weight: 500;
+}
+
+.ff {
+	&--secondary {
+		font-family: "YapariTrial";
+	}
+}
+
+.color {
+	&--accent {
+		color: var(--color-accent);
+	}
+	&--success {
+		color: var(--color-success);
+	}
+}
+
+.fw {
+	&--400 {
+		font-weight: 400;
+	}
+	&--500 {
+		font-weight: 500;
+	}
+	&--600 {
+		font-weight: 600;
+	}
+	&--700 {
+		font-weight: 700;
+	}
+	&--900 {
+		font-weight: 900;
+	}
+}
+
+.modal {
+	display: none;
+}
+
+.modal.is-open {
+	display: block;
+}
+
+.container {
+	width: 100%;
+	max-width: 124rem;
+	padding-left: var(--container-padding);
+	padding-right: var(--container-padding);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	text-align: center;
+	max-width: 30rem;
+	min-height: 8rem;
+	padding: 2.5rem 1.5rem;
+	font-weight: bold;
+	text-decoration: none;
+	user-select: none;
+	transition: background-color var(--transition-options);
+	border: none;
+	cursor: pointer;
+	font-family: inherit;
+
+	&__primary {
+		background-color: #000;
+		color: #fff;
+		font-size: 2.4rem;
+		&:hover,
+		&:focus {
+			background-color: #c83d43;
+		}
+
+		&:active {
+			background-color: rgba(#c83d43, 0.5);
+		}
+	}
+}
+
+.logo {
+	height: clamp(5.4rem, 8vw, 8rem);
+}
+
+.topbar {
+	padding-top: 4rem;
+	.container {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.hero {
+	padding-top: clamp(4rem, 4.5vw, 4.5rem);
+	padding-bottom: clamp(8rem, 10vw, 10rem);
+	overflow: hidden;
+
+	&__media {
+		max-height: 70rem;
+		position: relative;
+		img {
+			margin: 0 auto;
+			width: auto;
+			height: auto;
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		z-index: -1;
+		top: 50%;
+		left: 0;
+		transform: translateY(-50%);
+	}
+
+	&__animation {
+		font-size: 40rem;
+		white-space: nowrap;
+		text-transform: uppercase;
+		color: #f5f5f5;
+		width: 100%;
+		animation: text-scrolling 40s linear infinite;
+		will-change: transform;
+		display: flex;
+
+		span {
+			display: block;
+			min-width: auto;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+		gap: 2rem;
+
+		@media screen and (min-width: 991px) {
+			flex-direction: row;
+			align-items: flex-start;
+			column-gap: 4rem;
+		}
+	}
+
+	&__content {
+		color: rgba(#000, 0.5);
+		font-size: 2.4rem;
+		font-weight: 500;
+		display: flex;
+		flex-direction: column;
+		row-gap: 2rem;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		line-height: 1.4;
+		font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+		color: #000;
+		flex-grow: 1;
+		span {
+			display: block;
+		}
+	}
+
+	&__button {
+		margin-top: 2rem;
+		flex-shrink: 0;
+		min-width: 30rem;
+	}
+}
+
+@keyframes text-scrolling {
+	0% {
+		transform: translate3d(0%, 0, 0);
+	}
+	100% {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+
+.footer {
+	background-color: #000;
+	color: #fff;
+	padding: 12rem 0;
+
+	&__form {
+		max-width: 80rem;
+		margin: 0 auto;
+
+		.form {
+			&__title {
+				font-size: clamp(2.4rem, 3.2vw, 3.2rem);
+				line-height: 1.4;
+				text-transform: uppercase;
+				margin-bottom: 5rem;
+			}
+
+			&__input {
+				display: block;
+				width: 100%;
+				background-color: transparent;
+				border: none;
+				border-bottom: 0.2rem solid currentColor;
+				padding: 1rem 0;
+				font-weight: 500;
+				font-size: 2.4rem;
+				font-family: inherit;
+				color: inherit;
+				outline: none;
+				&.invalid {
+					border-color: var(--color-accent);
+				}
+				&::placeholder {
+					color: inherit;
+					opacity: 0.5;
+				}
+			}
+
+			&__submit {
+				background-color: transparent;
+				color: inherit;
+				border: none;
+				padding: 1rem 0;
+				font-family: inherit;
+				font-weight: 500;
+				font-size: 2.4rem;
+				line-height: 1.2;
+				cursor: pointer;
+				display: flex;
+				align-items: center;
+				span {
+					transition: transform var(--transition-options);
+				}
+				&:hover {
+					span {
+						transform: translateX(-0.5rem);
+					}
+				}
+
+				img {
+					margin-left: 1rem;
+				}
+			}
+
+			&__field {
+				position: relative;
+
+				.form__submit {
+					position: absolute;
+					right: 0;
+					bottom: 0;
+					height: 100%;
+					z-index: 2;
+				}
+			}
+
+			&__status {
+				font-size: 1.6rem;
+				font-weight: 500;
+				padding-top: 0.6rem;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-top: clamp(8rem, 12vw, 12rem);
+		font-size: clamp(1.4rem, 1.8vw, 1.8rem);
+
+		a {
+			color: inherit;
+			text-decoration: none;
+			font-weight: 600;
+			transition: color var(--transition-options);
+			&:hover {
+				color: var(--color-accent);
+			}
+		}
+	}
+}
+
+@import "modal";
