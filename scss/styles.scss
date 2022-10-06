@@ -127,9 +127,14 @@ body {
 	padding-bottom: clamp(8rem, 10vw, 10rem);
 	overflow: hidden;
 
+	.container + .container {
+		padding-top: clamp(8rem, 10vw, 10rem);
+	}
+
 	&__media {
 		max-height: 70rem;
 		position: relative;
+		margin-bottom: clamp(6rem, 8vw, 8rem);
 		img {
 			margin: 0 auto;
 			width: auto;
@@ -320,3 +325,4 @@ body {
 }
 
 @import "modal";
+@import "dark-theme";

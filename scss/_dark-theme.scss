@@ -1,0 +1,21 @@
+.dark-theme {
+	background-color: #000;
+	color: #fff;
+
+	.btn__primary {
+		color: #000;
+		background-color: #fff;
+	}
+
+	.hero__content {
+		color: rgba(#fff, 0.5);
+	}
+
+	.hero__title {
+		color: #fff;
+	}
+
+	.footer {
+		background-color: #101010;
+	}
+}
