@@ -149,6 +149,49 @@ body {
 			margin: 0 auto;
 			max-width: 100%;
 			max-height: 100%;
+			margin-bottom: -5.5rem;
+		}
+
+		.iframe__container {
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+		}
+
+		.media__overlay {
+			position: absolute;
+			z-index: 2;
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+			transition: background-color var(--transition-options), color var(--transition-options);
+			color: transparent;
+			cursor: pointer;
+			&.hide {
+				display: none;
+				& + .media__overlay_button {
+					display: block !important;
+				}
+			}
+			&:hover {
+				background-color: rgba(#000, 0.1);
+				color: inherit;
+			}
+
+			&_button {
+				display: none;
+				position: absolute;
+				right: 0;
+				top: 0;
+				font-size: clamp(1.8rem, 3.2vw, 3.2rem);
+				padding: clamp(1.8rem, 3.2vw, 3.2rem);
+				cursor: pointer;
+			}
 		}
 	}
 
