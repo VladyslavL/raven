@@ -349,6 +349,21 @@ body {
 				font-size: 1.6rem;
 				font-weight: 500;
 				padding-top: 0.6rem;
+
+				& > * {
+					display: none;
+				}
+			}
+		}
+
+		&.success {
+			.status--success {
+				display: block !important;
+			}
+		}
+		&.error {
+			.status--error {
+				display: block !important;
 			}
 		}
 	}
