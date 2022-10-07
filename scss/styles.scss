@@ -421,5 +421,18 @@ img {
 	}
 }
 
+.protection {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 0 6rem 0;
+
+	& > .container {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+}
+
 @import "modal";
 @import "dark-theme";

@@ -21,8 +21,8 @@
     element.innerHTML = url.replace('?edition=', '') || '01';
   }
 
-  if (document.querySelector("form")) {
-    var Forms = document.querySelectorAll("form");
+  if (document.querySelector(".footer__form")) {
+    var Forms = document.querySelectorAll(".footer__form");
     Forms.forEach((Form) => {
       Form.onsubmit = function (event) {
         event.preventDefault();
@@ -46,6 +46,27 @@
         };
 
         request.send(formData);
+
+        Form.reset();
+      };
+    });
+  }
+
+  if (document.querySelector(".protection .footer__form")) {
+    var Forms = document.querySelectorAll(".protection .footer__form");
+    Forms.forEach((Form) => {
+      Form.onsubmit = function (event) {
+        event.preventDefault();
+
+        const PASSWORD = '123'
+        const passwordValue = Form.querySelector('[type=password]').value;
+
+        if (passwordValue === PASSWORD) {
+          document.querySelector('.protected-content').style.display = 'block';
+          document.querySelector('.protection').style.display = 'none';
+        } else {
+          Form.classList.add("error");
+        }
 
         Form.reset();
       };
